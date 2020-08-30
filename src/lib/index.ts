@@ -23,7 +23,11 @@ const verifyAppProxyHmac = (
     const { signature, ...otherQueryParams } = parsedQueryString;
 
     const input = Object.keys(otherQueryParams)
-        .filter((key) => !nonShopifyQueryParamKeys.includes(key))
+        .filter(
+            (key) =>
+                !nonShopifyQueryParamKeys ||
+                !nonShopifyQueryParamKeys.includes(key)
+        )
         .sort()
         .map((key) => {
             const value = otherQueryParams[key];
