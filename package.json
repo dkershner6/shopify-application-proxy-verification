@@ -1,7 +1,7 @@
 {
-  "name": "npm-typescript-package-template",
-  "version": "0.0.0",
-  "description": "A template for easy creation of new NPM packages",
+  "name": "shopify-application-proxy-verification",
+  "version": "1.0.0",
+  "description": "Simple function to verify Shopify Application Proxy requests using HMAC",
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
@@ -16,7 +16,14 @@
     "type": "git",
     "url": "git+https://github.com/dkershner6/npm-typescript-package-template.git"
   },
-  "keywords": [],
+  "keywords": [
+    "shopify",
+    "application",
+    "proxy",
+    "hmac",
+    "verifier",
+    "verification"
+  ],
   "author": "Derek Kershner",
   "license": "MIT",
   "bugs": {
