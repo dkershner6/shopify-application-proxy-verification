@@ -1,0 +1,53 @@
+name: Release and Publish
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Extract version
+        id: extract_version
+        uses: Saionaro/extract-package-version@v1.0.6
+      - name: Tag Commit
+        uses: richardsimko/update-tag@master
+        with:
+          tag_name: "v${{ steps.extract_version.outputs.version }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-npm:
+    needs: [create-release]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Ensure .npmrc and .env are .gitignored
+        id: gitignore-parser
+        uses: dkershner6/gitignore-parser@v1
+        with:
+          must_deny: ".npmrc,.env"
+      - name: Set NPM Publish Token
+        uses: filipstefansson/set-npm-token-action@v1
+        with:
+          token: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      - run: npm i
+      - run: npm run build
+      - run: npm prune --production
+      - run: npm publish

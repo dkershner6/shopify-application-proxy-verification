@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "downlevelIteration": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "coverage",
+    "jest.config.js",
+    "demo-site",
+    "**/__test__/**/*.ts",
+    "**/__test__/**/*.tsx"
+  ]
+}

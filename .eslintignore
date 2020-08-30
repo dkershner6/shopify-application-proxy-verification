@@ -1,0 +1,6 @@
+node_modules/**
+demo-site/**
+dist/**
+examples/coverage/**
+examples/build/**
+next.config.js

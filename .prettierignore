@@ -1,0 +1,11 @@
+.github
+.next
+coverage
+node_modules
+.prettierrc
+jest.config.js
+next.config.js
+styles/css
+public
+demo-site
+dist
