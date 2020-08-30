@@ -15,4 +15,23 @@ describe('verifyAppProxyHmac', () => {
 
         expect(verifyAppProxyHmac(queryParams, TEST_SECRET)).toBeTruthy();
     });
+
+    it('Should remove non Shopify Query Params on demand', () => {
+        const queryParams = {
+            path_prefix: '/apps/yourApp',
+            timestamp: '1598813183',
+            addressId: '7777',
+            signature:
+                '3540716d7989d2af41589ad9e48aaa5a8c8425005d97620445f4c4cb4cc19e0a',
+            customerId: '12344',
+            shop: 'your-shop.myshopify.com'
+        };
+
+        expect(
+            verifyAppProxyHmac(queryParams, TEST_SECRET, [
+                'addressId',
+                'customerId'
+            ])
+        ).toBeTruthy();
+    });
 });
