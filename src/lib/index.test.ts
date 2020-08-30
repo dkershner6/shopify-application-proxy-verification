@@ -1,5 +1,18 @@
-import twoPlusTwo from '.';
+import verifyAppProxyHmac from '.';
+import crypto from 'crypto';
 
-it('Should be 4', () => {
-    expect(twoPlusTwo).toEqual(4);
+describe('verifyAppProxyHmac', () => {
+    const TEST_SECRET = 'shppa_sdjkfgsdohslkbsdlvkb';
+
+    it('Should correctly match a signature to its matching secret and query params', () => {
+        const matchingSignature =
+            '71ff7431e366f84aa0d95cb0a01aeb92c50e8d7597e8ef1a24588929c61a0112';
+        const queryParams = {
+            signature: matchingSignature,
+            test: 'testing123',
+            thisIsOnlyATest: 'true'
+        };
+
+        expect(verifyAppProxyHmac(queryParams, TEST_SECRET)).toBeTruthy();
+    });
 });
