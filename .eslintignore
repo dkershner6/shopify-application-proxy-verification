@@ -4,3 +4,4 @@ dist/**
 examples/coverage/**
 examples/build/**
 next.config.js
+jest.config.js

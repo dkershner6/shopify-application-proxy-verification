@@ -13,7 +13,7 @@ module.exports = {
         // to transform jsx into js rather than leaving it jsx such as the next build requires.  you
         // can see this setting in tsconfig.jest.json -> "jsx": "react"
         'ts-jest': {
-            tsConfig: 'tsconfig.json'
+            tsConfig: 'tsconfig.test.json'
         }
     }
 };
