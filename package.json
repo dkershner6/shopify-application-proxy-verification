@@ -1,6 +1,6 @@
 {
   "name": "shopify-application-proxy-verification",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Simple function to verify Shopify Application Proxy requests using HMAC",
   "main": "dist/index.js",
   "source": "src/index.ts",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dkershner6/npm-typescript-package-template.git"
+    "url": "git+https://github.com/dkershner6/shopify-application-proxy-verification.git"
   },
   "keywords": [
     "shopify",
@@ -31,9 +31,9 @@
   "author": "Derek Kershner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dkershner6/npm-typescript-package-template/issues"
+    "url": "https://github.com/dkershner6/shopify-application-proxy-verification/issues"
   },
-  "homepage": "https://github.com/dkershner6/npm-typescript-package-template#readme",
+  "homepage": "https://github.com/dkershner6/shopify-application-proxy-verification#readme",
   "devDependencies": {
     "@types/jest": "^26.0.4",
     "@types/node": "^14.0.22",
