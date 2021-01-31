@@ -9,3 +9,4 @@ styles/css
 public
 demo-site
 dist
+tsconfig.esm.json
