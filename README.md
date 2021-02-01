@@ -11,7 +11,7 @@ This package has no dependencies and is very tiny.
 ## Usage
 
 ```typescript
-import verifyAppProxyHmac from 'shopify-application-proxy-verification';
+import { verifyAppProxyHmac } from 'shopify-application-proxy-verification';
 
 const verifyAppProxyRequest = (req, res, next) => {
     if ((verifyAppProxyHmac(req.query), process.env.SHOPIFY_SECRET)) {
