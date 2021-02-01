@@ -1,5 +1,4 @@
 import verifyAppProxyHmac from '.';
-import crypto from 'crypto';
 
 describe('verifyAppProxyHmac', () => {
     const TEST_SECRET = 'shppa_sdjkfgsdohslkbsdlvkb';

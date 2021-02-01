@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "outDir": "dist",
+    "outDir": "dist/cjs",
     "rootDir": "src",
     "allowJs": true,
     "skipLibCheck": true,
