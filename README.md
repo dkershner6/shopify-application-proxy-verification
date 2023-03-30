@@ -14,7 +14,7 @@ This package has no dependencies and is very tiny.
 import { verifyAppProxyHmac } from 'shopify-application-proxy-verification';
 
 const verifyAppProxyRequest = (req, res, next) => {
-    if if (verifyAppProxyHmac(req.query, process.env.SHOPIFY_API_SECRET)) {
+    if (verifyAppProxyHmac(req.query, process.env.SHOPIFY_API_SECRET)) {
         return next();
     }
     return res.status(403).json({ errorMessage: 'I don\t think so.' });
